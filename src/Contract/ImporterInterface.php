@@ -1,11 +1,14 @@
 <?php
 namespace Cyberduck\LaravelExcel\Contract;
 
-use Illuminate\Database\Eloquent\Collection;
+use Illuminate\Database\Eloquent\Model;
 
-interface ExporterInterface
+interface ImporterInterface
 {
     public function load($path);
     public function setParser(ParserInterface $parser);
+    public function setModel(Model $model);
+    public function setSheet($sheet);
     public function getCollection();
+    public function save($updateIfEquals);
 }
